@@ -13,7 +13,7 @@ window.onload = function () {
     var game = new Phaser.Game(800, 600, Phaser.AUTO, 'Assignment_1', { preload: preload, create: create, update: update });
 
     function preload() {
-        game.load.atlas('breakout', 'assets/breakout/breakout.png', 'assets/breakout/breakout.json');
+        game.load.atlas('breakout', 'assets/breakout.png', 'assets/breakout.json');
         game.load.image('starfield', 'assets/starfield.jpg');
     }
 
@@ -58,7 +58,7 @@ window.onload = function () {
         ball.body.collideWorldBounds = true;
         ball.body.bounce.set(1);
 
-        ball.animations.add('spin', ['ball_1.png', 'ball_2.png', 'ball_3.png', 'ball_4.png', 'ball_5.png'], 50, true, false);
+        //ball.animations.add('spin', ['ball_1.png', 'ball_2.png', 'ball_3.png', 'ball_4.png', 'ball_5.png'], 50, true, false);
 
         ball.events.onOutOfBounds.add(ballLost, this);
 
@@ -90,7 +90,6 @@ window.onload = function () {
         }
         else {
             game.physics.arcade.collide(ball, paddle, ballHitPaddle, null, this);
-
         }
 
     }
@@ -142,19 +141,22 @@ window.onload = function () {
             //  Ball is on the left-hand side of the paddle
             diff = _paddle.x - _ball.x;
             _ball.body.velocity.x = (-10 * diff);
-            Score += 1;
+            score++;
+            scoreText.text = 'score: ' + score;
         }
         else if (_ball.x > _paddle.x) {
             //  Ball is on the right-hand side of the paddle
             diff = _ball.x - _paddle.x;
             _ball.body.velocity.x = (10 * diff);
-            Score += 1;
+            score++;
+            scoreText.text = 'score: ' + score;
         }
         else {
             //  Ball is perfectly in the middle
             //  Add a little random X to stop it bouncing straight up!
             _ball.body.velocity.x = 2 + Math.random() * 8;
-            Score += 1;
+            score++;
+            scoreText.text = 'score: ' + score;
         }
 
     }
