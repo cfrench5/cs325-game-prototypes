@@ -10,7 +10,7 @@ window.onload = function () {
     // loading functions to reflect where you are putting the assets.
     // All loading functions will typically all be found inside "preload()".
 
-    var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
+    var game = new Phaser.Game(800, 600, Phaser.AUTO, 'Assignment_1', { preload: preload, create: create, update: update });
 
     function preload() {
         game.load.atlas('breakout', 'assets/breakout/breakout.png', 'assets/breakout/breakout.json');
