@@ -16,7 +16,7 @@ window.onload = function() {
 	    game.load.image('background', 'assets/background.png');
 	    game.load.image('bar', 'assets/bar.png');
 	    game.load.image('egg', 'assets/egg.png');
-	    game.load.audio('clear', 'assets/clear2.mp3');
+	    game.load.audio('clear', 'assets/clear.mp3');
 	}
 
 	var egg;
