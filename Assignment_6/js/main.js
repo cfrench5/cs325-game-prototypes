@@ -16,6 +16,7 @@ window.onload = function() {
 	    game.load.image('rolldice', 'assets/rolldice.png');
 	    game.load.image('select', 'assets/select.png');
 	    game.load.audio('playermove', 'assets/playermove.mp3');
+	    game.load.audio('dicesound', 'assets/dicesound.mp3');
 	}
 
 	var blocks;
@@ -34,13 +35,15 @@ window.onload = function() {
 	var select;
 	var isSelected;
 	var fxplayermove;
+	var fxdiceroll;
 
 	function create() {
 	    game.physics.startSystem(Phaser.Physics.ARCADE);
 	    blocks = game.add.group();
 	    up1s = game.add.group();
 	    fxplayermove = game.add.audio('playermove');
-        
+	    fxdiceroll = game.add.audio('dicesound');
+
 	    for(var i = 0; i < 5; i++)
 	    {
 	        for(var j = 0; j < 5; j++)
@@ -102,6 +105,7 @@ window.onload = function() {
 	    text.anchor.set(0.5);
         p1score = 0;
         p2score = 0;
+
 	    blocks.forEach(function(each) {
             if(each.frame == 1) {
             	var r = game.rnd.between(1, 3);
@@ -120,6 +124,7 @@ window.onload = function() {
 
 	    textp1.text = p1score;
 	    textp2.text = p2score;
+
 	    if(p1score >= 4 && p1.x == 100 && p1.y == 100){
 	    	st = 100;
 	    	text.text = "Player 1 won!";
@@ -134,6 +139,7 @@ window.onload = function() {
 	    	text.text = "Player 1: roll the dice.";
 	        if(rolldice.input.pointerOver() && game.input.activePointer.leftButton.isDown)
 	        {
+	            fxdiceroll.play();
 	            rand = game.rnd.between(1, 12);
 	            if(rand >= 1 && rand <= 3)
 	            	rand = 1;
@@ -160,6 +166,7 @@ window.onload = function() {
                     
                 }
 	        }, this);
+
 	        if(!isSelected) {
 	        	select.x = 1000;
 		        select.y = 1000;
@@ -180,11 +187,14 @@ window.onload = function() {
 	        	st = 3;
 	        }
 	    }
+
 	    if(st == 3)
 	    {
-	    	text.text = "Player 2: roll the dice.";
+	        text.text = "Player 2: roll the dice.";
+
 	        if(rolldice.input.pointerOver() && game.input.activePointer.leftButton.isDown)
 	        {
+	            fxdiceroll.play();
 	        	rand = game.rnd.between(1, 12);
 	            if(rand >= 1 && rand <= 3)
 	            	rand = 1;
@@ -211,6 +221,7 @@ window.onload = function() {
                     
                 }
 	        }, this);
+
 	        if(!isSelected) {
 	        	select.x = 1000;
 		        select.y = 1000;
@@ -227,7 +238,8 @@ window.onload = function() {
 	                	p2score++;
 	                	up1.destroy();
 	                }
-		        }, this);
+	        	}, this);
+
 	        	st = 1;
 	        }
 	    }
