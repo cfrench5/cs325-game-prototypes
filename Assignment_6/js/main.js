@@ -10,7 +10,7 @@ window.onload = function() {
 	});
 
 	function preload() {
-	    game.load.spritesheet('blocksheet', 'assets/blocksheet.png', 100, 100);
+	    game.load.spritesheet('blocks', 'assets/blocks.png', 100, 100);
 	    game.load.image('p1', 'assets/p1.png');
 	    game.load.image('p2', 'assets/p2.png');
 	    game.load.image('rolldice', 'assets/rolldice.png');
@@ -140,15 +140,7 @@ window.onload = function() {
 	        if(rolldice.input.pointerOver() && game.input.activePointer.leftButton.isDown)
 	        {
 	            fxdiceroll.play();
-	            rand = game.rnd.between(1, 12);
-	            if(rand >= 1 && rand <= 3)
-	            	rand = 1;
-	            if(rand >= 4 && rand <= 6)
-	            	rand = 2;
-	            if(rand >= 7 && rand <= 9)
-	            	rand = 3;
-	            if(rand >= 10 && rand <= 12)
-	            	rand = 4;
+	            rand = game.rnd.between(1, 3);
 	            text.text = "You Rolled " + rand + "!";
 	            st = 2;
 	        }
@@ -195,15 +187,7 @@ window.onload = function() {
 	        if(rolldice.input.pointerOver() && game.input.activePointer.leftButton.isDown)
 	        {
 	            fxdiceroll.play();
-	        	rand = game.rnd.between(1, 12);
-	            if(rand >= 1 && rand <= 3)
-	            	rand = 1;
-	            if(rand >= 4 && rand <= 6)
-	            	rand = 2;
-	            if(rand >= 7 && rand <= 9)
-	            	rand = 3;
-	            if(rand >= 10 && rand <= 12)
-	            	rand = 4;
+	        	rand = game.rnd.between(1, 3);
 	            text.text = "You Rolled " + rand + "!";
 	            st = 4;
 	        }
