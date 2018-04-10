@@ -10,7 +10,7 @@ window.onload = function() {
 	});
 
 	function preload() {
-	    game.load.spritesheet('blocks', 'assets/blocks.png', 100, 100);
+	    game.load.spritesheet('blocks', 'assets/blocks.PNG', 100, 100);
 	    game.load.image('p1', 'assets/p1.png');
 	    game.load.image('p2', 'assets/p2.png');
 	    game.load.image('rolldice', 'assets/rolldice.png');
