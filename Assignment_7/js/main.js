@@ -144,9 +144,9 @@ window.onload = function() {
 	            text.text = "You Rolled " + rand + "!";
 
 	            if (rand == 1 || rand == 3 || rand == 5) {
-	                st = 100;
 	                text.text = "Player 2 failed to defend!";
-	                text.text = "Player 1 won!"
+	                text.text = "Player 1 won!";
+	                st = 100;
 	            }
 
 	            else {
@@ -165,9 +165,9 @@ window.onload = function() {
 	            text.text = "You Rolled " + rand + "!";
 
 	            if (rand == 2 || rand == 4 || rand == 6) {
-	                st = 100;
 	                text.text = "Player 1 failed to defend!";
-	                text.text = "Player 2 won!"
+	                text.text = "Player 2 won!";
+	                st = 100;
 	            }
 
 	            else {
