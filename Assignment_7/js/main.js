@@ -123,18 +123,17 @@ window.onload = function() {
 	    isSelected = false;
 
 	    textp1.text = p1score;
-	    textp2.text = p2score;        
+	    textp2.text = p2score;
 
 	    if(p1score >= 4 && p1.x == 100 && p1.y == 100){
 	    	st = 100;
 	    	text.text = "Player 1 won!";
 	    }
-
 	    if(p2score >= 4 && p2.x == 700 && p2.y == 500){
 	    	st = 100;
 	    	text.text = "Player 2 won!";
 	    }
-
+	    
 	    if(st == 1)
 	    {
 	    	text.text = "Player 1: roll the dice.";
@@ -164,7 +163,6 @@ window.onload = function() {
 	        	select.x = 1000;
 		        select.y = 1000;
 	        }
-
 	        if(game.input.activePointer.leftButton.isDown && select.x != 1000 && select.y != 1000) {
 	        	fxplayermove.play();
 	        	p1.x = select.x;
@@ -200,7 +198,7 @@ window.onload = function() {
 	        	}
 
 	        	st = 3;
-	        
+	        }
 	    }
 
 	    if(st == 3)
@@ -233,7 +231,6 @@ window.onload = function() {
 	        	select.x = 1000;
 		        select.y = 1000;
 	        }
-
 	        if(game.input.activePointer.leftButton.isDown && select.x != 1000 && select.y != 1000) {
 	        	fxplayermove.play();
 	        	p2.x = select.x;
