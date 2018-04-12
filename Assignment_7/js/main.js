@@ -180,7 +180,7 @@ window.onload = function() {
 	        	if (p1score >= 4 && p1.x == p2.x && p1.y == p2.y) {
 	        	    text.text = "Player 2 defending!";
 
-	        	    if (rolldice.input.pointerOver() && game.input.activePointer.leftButton.isDown) {
+	        	    //if (rolldice.input.pointerOver() && game.input.activePointer.leftButton.isDown) {
 	        	        fxdiceroll.play();
 	        	        rand = game.rnd.between(1, 6);
 	        	        text.text = "You Rolled " + rand + "!";
@@ -194,7 +194,7 @@ window.onload = function() {
 	        	        else {
 	        	            text.text = "Player 2 succeeded to defend!";
 	        	        }
-	        	    }
+	        	    //}
 	        	}
 
 	        	st = 3;
@@ -248,7 +248,7 @@ window.onload = function() {
 	        	if (p2score >= 4 && p2.x == p1.x && p2.y == p1.y) {
 	        	    text.text = "Player 1 defending!";
 
-	        	    if (rolldice.input.pointerOver() && game.input.activePointer.leftButton.isDown) {
+	        	    //if (rolldice.input.pointerOver() && game.input.activePointer.leftButton.isDown) {
 	        	        fxdiceroll.play();
 	        	        rand = game.rnd.between(1, 6);
 	        	        text.text = "You Rolled " + rand + "!";
@@ -261,9 +261,8 @@ window.onload = function() {
 
 	        	        else {
 	        	            text.text = "Player 1 succeeded to defend!";
-	        	            st = 1;
 	        	        }
-	        	    }
+	        	    //}
 	        	}
 
 	        	st = 1;
