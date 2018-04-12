@@ -197,9 +197,10 @@ window.onload = function() {
 	        	            text.text = "Player 2 succeeded to defend!";
 	        	        }
 	        	    }
+	        	}
 
 	        	st = 3;
-	        }
+	        
 	    }
 
 	    if(st == 3)
