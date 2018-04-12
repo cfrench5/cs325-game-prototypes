@@ -151,6 +151,7 @@ window.onload = function() {
 
 	            else {
 	                text.text = "Player 2 succeeded to defend!";
+	                st = 3;
 	            }
 	        }
 	    }
@@ -171,6 +172,7 @@ window.onload = function() {
 
 	            else {
 	                text.text = "Player 1 succeeded to defend!";
+	                st = 1;
 	            }
 	        }
 	    }
