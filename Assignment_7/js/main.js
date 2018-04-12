@@ -177,30 +177,30 @@ window.onload = function() {
 	                	p1score++;
 	                	up1.destroy();
 	                }
-		        }, this);
+	        	}, this);
+
+	        	if (p1score >= 4 && p1.x == p2.x && p1.y == p2.y) {
+	        	    text.text = "Player 2 defending!";
+
+	        	    if (rolldice.input.pointerOver() && game.input.activePointer.leftButton.isDown) {
+	        	        fxdiceroll.play();
+	        	        rand = game.rnd.between(1, 6);
+	        	        text.text = "You Rolled " + rand + "!";
+
+	        	        if (rand == 1 || rand == 3 || rand == 5) {
+	        	            st = 100;
+	        	            text.text = "Player 2 failed to defend!";
+	        	            text.text = "Player 1 won!"
+	        	        }
+
+	        	        else {
+	        	            text.text = "Player 2 succeeded to defend!";
+	        	        }
+	        	    }
+	        	}
+
 	        	st = 3;
 	        }
-
-	        if (p1score >= 4 && p1.x == p2.x && p1.y == p2.y) {
-	            text.text = "Player 2 defending!";
-
-	            if (rolldice.input.pointerOver() && game.input.activePointer.leftButton.isDown) {
-	                fxdiceroll.play();
-	                rand = game.rnd.between(1, 6);
-	                text.text = "You Rolled " + rand + "!";
-
-	                if (rand == 1 || rand == 3 || rand == 5) {
-	                    st = 100;
-	                    text.text = "Player 2 failed to defend!";
-	                    text.text = "Player 1 won!"
-	                }
-
-	                else {
-	                    text.text = "Player 2 succeeded to defend!";
-	                }
-	            }
-	        }
-            
 	    }
 
 	    if(st == 3)
@@ -247,28 +247,28 @@ window.onload = function() {
 	                	up1.destroy();
 	                }
 	        	}, this);
+                
+	        	if (p2score >= 4 && p2.x == p1.x && p2.y == p1.y) {
+	        	    text.text = "Player 1 defending!";
+
+	        	    if (rolldice.input.pointerOver() && game.input.activePointer.leftButton.isDown) {
+	        	        fxdiceroll.play();
+	        	        rand = game.rnd.between(1, 6);
+	        	        text.text = "You Rolled " + rand + "!";
+
+	        	        if (rand == 2 || rand == 4 || rand == 6) {
+	        	            st = 100;
+	        	            text.text = "Player 1 failed to defend!";
+	        	            text.text = "Player 2 won!"
+	        	        }
+
+	        	        else {
+	        	            text.text = "Player 1 succeeded to defend!";
+	        	        }
+	        	    }
+	        	}
 
 	        	st = 1;
-	        }
-            
-	        if (p2score >= 4 && p2.x == p1.x && p2.y == p1.y) {
-	            text.text = "Player 1 defending!";
-
-	            if (rolldice.input.pointerOver() && game.input.activePointer.leftButton.isDown) {
-	                fxdiceroll.play();
-	                rand = game.rnd.between(1, 6);
-	                text.text = "You Rolled " + rand + "!";
-
-	                if (rand == 2 || rand == 4 || rand == 6) {
-	                    st = 100;
-	                    text.text = "Player 1 failed to defend!";
-	                    text.text = "Player 2 won!"
-	                }
-
-	                else {
-	                    text.text = "Player 1 succeeded to defend!";
-	                }
-	            }
 	        }
 	    }
 	}
