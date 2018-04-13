@@ -125,11 +125,11 @@ window.onload = function() {
 	    textp1.text = p1score;
 	    textp2.text = p2score;
 
-	    if(p1score >= 4 && p1.x == 100 && p1.y == 100){
+	    if((p1score >= 4 && p1.x == 100 && p1.y == 100) || (p1score >= 4 && p1.x == p2.x && p1.y == p2.y){
 	    	st = 100;
 	    	text.text = "Player 1 won!";
 	    }
-	    if(p2score >= 4 && p2.x == 700 && p2.y == 500){
+	    if((p2score >= 4 && p2.x == 700 && p2.y == 500) || (p2score >= 4 && p2.x == p1.x && p2.y == p1.y){
 	    	st = 100;
 	    	text.text = "Player 2 won!";
 	    }
@@ -176,11 +176,6 @@ window.onload = function() {
 	                	up1.destroy();
 	                }
 	        	}, this);
-                
-	        	if(p1score >= 4 && p1.x == p2.x && p1.y == p2.y) {
-	        	    text.text = "Player 1 won!";
-	        	    st = 100;   
-	        	}
                 
 	        	st = 3;
 	        }
@@ -229,15 +224,6 @@ window.onload = function() {
 	                	up1.destroy();
 	                }
 	        	}, this);
-                
-	        	if(p2score >= 4 && p2.x == p1.x && p2.y == p1.y) {
-
-	        	    if(rand == 2 || rand == 4 || rand == 6) {
-	        	        text.text = "Player 2 won!";
-	        	        st = 100;
-	        	        }
-
-	        	}
                 
 	        	st = 1;
 	        }
