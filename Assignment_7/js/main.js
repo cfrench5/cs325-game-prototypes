@@ -17,6 +17,7 @@ window.onload = function() {
 	    game.load.image('select', 'assets/select.png');
 	    game.load.audio('playermove', 'assets/playermove.mp3');
 	    game.load.audio('dicesound', 'assets/dicesound.mp3');
+	    game.load.audio('bgm', 'assets/bgm.mp3');
 	}
 
 	var blocks;
@@ -36,6 +37,7 @@ window.onload = function() {
 	var isSelected;
 	var fxplayermove;
 	var fxdiceroll;
+	var fxbgm;
 
 	function create() {
 	    game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -43,6 +45,7 @@ window.onload = function() {
 	    up1s = game.add.group();
 	    fxplayermove = game.add.audio('playermove');
 	    fxdiceroll = game.add.audio('dicesound');
+	    fxbgm = game.add.audio('bgm');
 
 	    for(var i = 0; i < 5; i++)
 	    {
@@ -119,7 +122,7 @@ window.onload = function() {
 	}
 
 	function update() {
-
+	    fxbgm.play();
 	    isSelected = false;
 
 	    textp1.text = p1score;
