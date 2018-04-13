@@ -46,6 +46,7 @@ window.onload = function() {
 	    fxplayermove = game.add.audio('playermove');
 	    fxdiceroll = game.add.audio('dicesound');
 	    fxbgm = game.add.audio('bgm');
+	    fxbgm.play();
 
 	    for(var i = 0; i < 5; i++)
 	    {
@@ -122,7 +123,6 @@ window.onload = function() {
 	}
 
 	function update() {
-	    fxbgm.play();
 	    isSelected = false;
 
 	    textp1.text = p1score;
