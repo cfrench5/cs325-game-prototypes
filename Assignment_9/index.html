@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Evasion Robot</title>
+    <script src="js/phaser.js"></script>
+    <script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Evasion Robot</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+The originality of this game comes from the avoidance aspect of the player dodging the bullet on a small grid. Also, to mitigate certain RNG, so to allow for
+the player to have an easier time, the shield power up was implemented, which protects the player and destroys any bullets they come in contact with for a 
+brief period of time.
+</li>
+
+<li><strong>Technical Merit:</strong>
+Perhaps what could count as technicla merit here is the masking of sprites (the bullets only appearing on the center grid rather than the border), and that 
+of the power up (the shield).
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+There were some annoying bugs that were a bit weird to fix at first, like the shield showing up after the player dying if they clicked immediately after they
+collided. Other than that, perhaps the most annoying thing to do was doing the math for the boundaries of the character and the bullets staying within their
+respective row/column of the grid, as well as trying to mask the bullets underneath the border map, but not the center piece.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+<ul>
+<li>Player sprite: <a href="https://rmgamematerial.wordpress.com/tag/rpg-maker-vx/">Player sprite</a></li>
+<li>Tiles sprite: <a href="https://www.maxpixel.net/Metallic-Plate-Metal-Grid-Steel-Grid-Metal-Plate-2911278">Tiles sprite</a></li>
+<li>Start Button sprite: <a href="https://www.pixilart.com/art/start-sprite-0845e942650b0d2">Start Button sprite</a></li>
+<li>Explosion sprite: <a href="">Explosion sprite</a></li>
+<li>Explosion sound: <a href="">Explosion sound</a></li>
+<li>BGM sound: <a href="https://www.youtube.com/watch?v=xMfLhDFT8Uk&t=6s">The Adventures of Batman & Robin--Big Boss</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+Previous game Robot Rampage, the digital one named Robot Evasion, though a lot has changed from the physical to digital.
+</li>
+
+<li><strong>High Concept:</strong>
+Move around the base avoiding the incoming bullets coming towards the robot, using your shield to protect and destroy them in a battle to see how long you 
+can last!
+</li>
+
+<li><strong>Theme:</strong>
+This was an iteration of the game we did last week, so in this case soldier.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+Input: Mouse moves the player around, instead of clicking and selecting where to go.
+Randomness: Randomness on the bullets flying at the player, but not on the player itself.
+Play Style: Competitor
+Genre: Avoidance (I'm not sure what to label this games' genre as at the moment).
+</li>
+
+<li><strong>Prototype Goal:</strong>
+For now, I wanted to test the idea of the grid, as well as the player (robot) movement with the mouse. I was thinking about trying out the idea of health,
+since it is very prevalent in my physical prototype, but I will try adding that in the next iteration. So for now, the goal is to pretend the bullets are 
+coming from sort of military weapon, and the robot (at the moment, perhaps even permanently) must dodge sence they are defenseless, only having the shield
+to protect themselves. Though the idea of this game being "any period of time" exists instead of a given one like the physical, due to how different in 
+nature this is to the physical.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+This game should be a fun yet challenging experience for players, especially for those who wish to test their reflex skills, though be warned that this is a
+"pixel perfect" kind of game.
+</li>
+
+<li><strong>Gameplay:</strong>
+The player will move their character with the mouse, dodging the red bullets that come from all sides, which if they happen to come into contact with their 
+robot will explode. To mitigate this, the player has a shield that can block and destroy bullets for a period of time, but they must wait awhile before they
+can use it again. The player's goal is to survive for as long as possible (for the time being).
+</li>
+
+<li><strong>Strategies:</strong>
+After a lot of testing, the best strategy turns out to stay in the center of the map, only using the shield when trapped into a corner, or too many appear in
+the center of the screen.
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+No real story here, just a player character that happens to be a robot, where they player must try and survive for as long as they can.
+</li>
+
+<li><strong>Target Audience:</strong>
+For younger kids and teens mainly, where this game is meant as another time passer.
+</li>
+
+<li><strong>Play Time:</strong>
+The playtime is technically infinite, since a player doesn't lose until they finally come in contact with a red bullet (without their shield up).
+</li>
+
+</ul>
+
+</div>
+</body>
+</html>
